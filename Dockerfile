@@ -60,6 +60,8 @@ ENV PATH $BUNDLE_BIN:$PATH
 RUN mkdir -p "$GEM_HOME" "$BUNDLE_BIN" \
 	&& chmod 777 "$GEM_HOME" "$BUNDLE_BIN"
 
+ENV BUS_SESSION_BUS_ADDRESS=/dev/null
+
 ENV DISPLAY :99
 ADD xvfb_init /etc/init.d/xvfb
 RUN chmod a+x /etc/init.d/xvfb
